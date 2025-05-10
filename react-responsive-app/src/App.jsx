@@ -7,6 +7,7 @@ import Hero from './components/Hero.jsx'
 import Analytics from './components/Analytics.jsx'
 import Information from './components/Information.jsx'
 import Newsletter from './components/Newsletter.jsx'
+import FramerMotionTesting from './components/FramerMotionTesting.jsx'
 
 function App() {
     const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
                 <Hero />
                 <Analytics />
                 <Newsletter />
+                {/* <FramerMotionTesting /> */}
                 {/* <Information /> */}
             </div>
         </>

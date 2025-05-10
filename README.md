@@ -25,15 +25,33 @@ cd react-responsive-app
 npm install react-typed --save
 
 
+**--Install Framer-Motion--**
+cd react-responsive-app
+npm install motion
+
+
 **--TOOLS--**
     Build Tool:     Vite
     CSS Framework:  Tailwind CSS
     Framework:      React
     Language:       Javascript Vanilla
-    Packages:       React-icons, React-typed
+    Packages:       React-icons, React-typed, Framer-motion(Not Part of Tutorial)
 
 **--Topics--**
 State
+
+
+**----Github Pages Deployment----**
+Insert into vite config js, just after plugins object   - base: "/<REPOSITORY NAME>"
+Insert this into package.json just below the "name" key - "homepage": "https://<USERNAME>.github.io/<REPOSITORY NAME>/",
+cd react-responsive-app
+npm install gh-pages
+**--Insert this two lines inside package.json's script object--**
+    - "predeploy": "npm run build",
+    - "deploy": "gh-pages -d dist"
+**--**
+Git Push to Repo
+npm run deploy
 
 
 05-07-25 - 21:05 | 23:27 
