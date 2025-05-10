@@ -18,7 +18,7 @@ function Hero() {
         // </div>
 
         <div className='text-white'>
-            <motion.div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center' initial={{ opacity: 0, y: 150, scale: 1.2 }} viewport={{ amount: 0.5, once: false }} whileInView={{ opacity: 1, y: 0, scale: 1 }} transition={{ opacity: { duration: 1.2 }, y: { duration: 0.5 }, scale: { duration: 0.8 }, }} whileHover={{ scale: 1.01 }}>
+            <motion.div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center' initial={{ opacity: 0, y: 150, scale: 1.2 }} viewport={{ amount: 0.5, once: false }} whileInView={{ opacity: 1, y: 0, scale: 1 }} transition={{ opacity: { duration: 1.2, type: 'tween' }, y: { duration: 0.5, type: 'tween' }, scale: { duration: 0.8, type: 'tween' }, }} whileHover={{ scale: 1.01 }}>
                 <p className='text-[#00df9a] font-bold p-2'>GROWING WITH DATA ANALYTICS</p>
                 <h1 className='md:text-7xl sm:text-6xl text-4xl font-bold md:py-6'>Grow with data.</h1>
                 <div className='flex justify-center items-center flex-wrap'>
