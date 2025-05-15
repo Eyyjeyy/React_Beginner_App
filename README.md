@@ -35,13 +35,14 @@ npm install motion
     CSS Framework:  Tailwind CSS
     Framework:      React
     Language:       Javascript Vanilla
-    Packages:       React-icons, React-typed, Framer-motion(Not Part of Tutorial)
+    Packages:       React-icons, React-typed, Framer-motion(Not Part of Tutorial), GitHub Pages
 
 **--Topics--**
 State
 
 
 **----Github Pages Deployment----**
+Guide: https://youtu.be/hn1IkJk24ow
 Insert into vite config js, just after plugins object   - base: "/<REPOSITORY NAME>"
 Insert this into package.json just below the "name" key - "homepage": "https://<USERNAME>.github.io/<REPOSITORY NAME>/",
 cd react-responsive-app
@@ -64,3 +65,6 @@ https://youtu.be/ZU-drSVodBw?t=1850
 05-09-25 - 40:52 | 51:16
 https://youtu.be/ZU-drSVodBw?t=2452
 https://youtu.be/ZU-drSVodBw?t=3076
+
+05-10-25
+First React Website Deployment to GitHub Pages
