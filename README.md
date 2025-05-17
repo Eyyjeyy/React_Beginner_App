@@ -35,7 +35,7 @@ npm install motion
     CSS Framework:  Tailwind CSS
     Framework:      React
     Language:       Javascript Vanilla
-    Packages:       React-icons, React-typed, Framer-motion(Not Part of Tutorial), GitHub Pages
+    Packages:       React-icons, React-typed, Framer-motion(Not Part of Tutorial), GitHub Pages, React-Intersection-Observer
 
 **--Topics--**
 State
@@ -68,3 +68,6 @@ https://youtu.be/ZU-drSVodBw?t=3076
 
 05-10-25
 First React Website Deployment to GitHub Pages
+
+05-15-25 | 1:02:41
+https://youtu.be/ZU-drSVodBw?t=3761

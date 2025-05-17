@@ -8,6 +8,11 @@ import Analytics from './components/Analytics.jsx'
 import Information from './components/Information.jsx'
 import Newsletter from './components/Newsletter.jsx'
 import FramerMotionTesting from './components/FramerMotionTesting.jsx'
+import Cards from './components/Cards.jsx'
+import Test from './components/Test.jsx'
+import Test2 from './components/Test2.jsx'
+import Test3 from './components/Test3.jsx'
+
 
 function App() {
     const [count, setCount] = useState(0)
@@ -19,6 +24,12 @@ function App() {
                 <Hero />
                 <Analytics />
                 <Newsletter />
+                <Cards />
+
+                {/* <Test />
+                <Test2 />
+                <Test3 /> */}
+
                 {/* <FramerMotionTesting /> */}
                 {/* <Information /> */}
             </div>
