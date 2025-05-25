@@ -2,8 +2,8 @@ import React from 'react'
 import Single from '../assets/single.png'
 import Double from '../assets/double.png'
 import Triple from '../assets/triple.png'
-import { motion } from 'motion/react';
-import { useInView   } from "react-intersection-observer";
+import { motion, useInView } from 'motion/react';
+// import { useInView   } from "react-intersection-observer";
 import { useRef, useEffect, useState } from 'react';
 
 
@@ -51,59 +51,45 @@ function Cards() {
         }, {
             threshold: 0.25
         })
-        observer.observe(myRef.current);
+        // observer.observe(myRef.current);
 
         return () => observer.disconnect();
     }, []);
 
-    return (
-        <div className='w-full py-[10rem] text-black px-4 bg-white overflow-x-hidden overflow-y-hidden'>
-            {/* <div className='max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8'>
-                <div className='relative w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-                    <img className='w-20 mx-auto mt-[-3rem] bg-white relative left-3.5' src={Single} alt='' />
-                    <h2 className='text-2xl font-bold text-center py-8'>Single User</h2>
-                    <p className='text-center text-4xl font-bold'>$149</p>
-                    <div className='text-center font-medium'>
-                        <p className='py-2 border-b mx-8 mt-8'>500gb Storage</p>
-                        <p className='py-2 border-b mx-8'>1 Granted User</p>
-                        <p className='py-2 border-b mx-8'>Send up to 2 GB</p>
-                    </div>
-                    <button>Start Trial</button>
-                </div>
-                <div className='relative w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-                    <img className='w-20 mx-auto mt-[-3rem] bg-white relative' src={Double} alt='' />
-                    <h2 className='text-2xl font-bold text-center py-8'>Single User</h2>
-                    <p className='text-center text-4xl font-bold'>$149</p>
-                    <div className='text-center font-medium'>
-                        <p className='py-2 border-b mx-8 mt-8'>500gb Storage</p>
-                        <p className='py-2 border-b mx-8'>1 Granted User</p>
-                        <p className='py-2 border-b mx-8'>Send up to 2 GB</p>
-                    </div>
-                    <button>Start Trial</button>
-                </div>
-                <div className='relative w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg hover:scale-105 duration-300'>
-                    <img className='w-20 mx-auto mt-[-3rem] bg-white relative' src={Triple} alt='' />
-                    <h2 className='text-2xl font-bold text-center py-8'>Single User</h2>
-                    <p className='text-center text-4xl font-bold'>$149</p>
-                    <div className='text-center font-medium'>
-                        <p className='py-2 border-b mx-8 mt-8'>500gb Storage</p>
-                        <p className='py-2 border-b mx-8'>1 Granted User</p>
-                        <p className='py-2 border-b mx-8'>Send up to 2 GB</p>
-                    </div>
-                    <button>Start Trial</button>
-                </div>
-            </div> */}
+    useEffect(() => {
+        console.log('isVisible changed:', isVisible);
+    }, [isVisible]);
 
-            <div className='relative max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8' ref={myRef}>
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.3 });
+
+    return (
+        <div className='w-full md:py-[10rem] py-[2rem] text-black px-4 bg-white overflow-x-hidden overflow-y-hidden'>
+            {/* <div className='relative max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8' ref={myRef}>
                 {cardData.map((card, index) => (
                     <motion.div className='relative w-full max-w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg' key={`${card}-${index}`} viewport={{ amount: 0.5, once: false }} animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 150, scale: 1.2 } } transition={{ duration: 1.1, type: "keyframes", bounce: 0.5, delay: index * 0.3 }} whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} onAnimationStart={() => (isAnimating.current = true)} onAnimationComplete={() => (isAnimating.current = false, console.log('complete'))}>
                             <img className='w-20 mx-auto mt-[-3rem] bg-white relative z-[1000]' src={cardsImages[card-1]} alt='' />
                             <h2 className='text-2xl font-bold text-center py-8'>{card.title}</h2>
                             <p className='text-center text-4xl font-bold'>{card.price}</p>
                             <div className='text-center font-medium'>
-                                {/* <p className='py-2 border-b mx-8 mt-8'>500gb Storage</p>
-                                <p className='py-2 border-b mx-8'>1 Granted User</p>
-                                <p className='py-2 border-b mx-8'>Send up to 2 GB</p> */}
+                                {card.features.map((feature, i) => (
+                                    <p key={i} className={`py-2 border-b mx-8 ${i === 0 ? card.customMarginTop : ''}`}>{feature}</p>
+                                ))}
+                            </div>
+                            <button className={`bg-[#00df9a] ${card.buttonClasses ? card.buttonClasses + ' text-[#00df9a]' : 'bg-[#00df9a]' } w-[200px] rounded-md font-medium my-6 px-6 py-3`}>Start Trial</button>
+                    </motion.div>
+                    
+                ))}
+            </div> */}
+
+
+            <div className='relative max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8' ref={ref}>
+                {cardData.map((card, index) => (
+                    <motion.div className='relative w-full max-w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg' key={`${card}-${index}`} initial={{ opacity: 0, y: 150, scale: 1.2 }} animate={ isInView ? {opacity: 1, y: 0, scale: 1} : {opacity: 0, y: 150, scale: 1.2} } transition={{ duration: 1.1, type: "keyframes", bounce: 0.5, delay: index * 0.3 }} whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}>
+                            <img className='w-20 mx-auto mt-[-3rem] bg-white relative z-[1000]' src={cardsImages[card-1]} alt='' />
+                            <h2 className='text-2xl font-bold text-center py-8'>{card.title}</h2>
+                            <p className='text-center text-4xl font-bold'>{card.price}</p>
+                            <div className='text-center font-medium'>
                                 {card.features.map((feature, i) => (
                                     <p key={i} className={`py-2 border-b mx-8 ${i === 0 ? card.customMarginTop : ''}`}>{feature}</p>
                                 ))}

@@ -26,8 +26,8 @@ function App() {
                 <Newsletter />
                 <Cards />
 
-                {/* <Test />
-                <Test2 />
+                {/* <Test /> */}
+                {/* <Test2 />
                 <Test3 /> */}
 
                 {/* <FramerMotionTesting /> */}
