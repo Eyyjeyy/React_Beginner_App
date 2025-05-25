@@ -64,7 +64,7 @@ function Cards() {
     const isInView = useInView(ref, { amount: 0.3 });
 
     return (
-        <div className='w-full md:py-[10rem] py-[2rem] text-black px-4 bg-white overflow-x-hidden overflow-y-hidden'>
+        <div className='w-full md:py-[10rem] py-[2rem] text-black px-4 bg-white dark:bg-white overflow-x-hidden overflow-y-hidden'>
             {/* <div className='relative max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8' ref={myRef}>
                 {cardData.map((card, index) => (
                     <motion.div className='relative w-full max-w-full shadow-xl flex flex-col items-center p-4 my-4 rounded-lg' key={`${card}-${index}`} viewport={{ amount: 0.5, once: false }} animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 150, scale: 1.2 } } transition={{ duration: 1.1, type: "keyframes", bounce: 0.5, delay: index * 0.3 }} whileHover={{ scale: 1.05, transition: { duration: 0.3 } }} onAnimationStart={() => (isAnimating.current = true)} onAnimationComplete={() => (isAnimating.current = false, console.log('complete'))}>
