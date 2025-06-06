@@ -12,6 +12,7 @@ import Cards from './components/Cards.jsx'
 import Test from './components/Test.jsx'
 import Test2 from './components/Test2.jsx'
 import Test3 from './components/Test3.jsx'
+import Footer from './components/Footer.jsx'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Analytics />
                 <Newsletter />
                 <Cards />
+                <Footer />
 
                 {/* <Test /> */}
                 {/* <Test2 />

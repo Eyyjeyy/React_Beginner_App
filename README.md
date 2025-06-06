@@ -71,3 +71,6 @@ First React Website Deployment to GitHub Pages
 
 05-15-25 | 1:02:41
 https://youtu.be/ZU-drSVodBw?t=3761
+
+05-31-25 | 1:16:51
+https://youtu.be/ZU-drSVodBw?si=VDhh0r02dtNuNQPU&t=4611
